@@ -80,14 +80,16 @@ body{
     .sidebar ul li i{
         font-size: 20px;
     }
-    .sidebar{
-        width:100px;
-
+    .main-content{
+        margin-left: 50px;
     }
+
+    
     .main-content{
         margin-left: 50px;
     }
 }
+
 @media (min-width:768px){
     .sidebar{
         width:100px
