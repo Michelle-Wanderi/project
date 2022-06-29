@@ -44,9 +44,15 @@ body{
     padding-top: 50px;
     background-attachment: fixed;
 }
+.container-fluid{
+    padding-top: 10px;
+}
+.col-lg-3{
+    padding-top: 10px;
+}
 @media screen and (min-width: 576px){
     .sidebar{
-        width:80px
+        width:50px
     }
     .sidebar ul li{
         text-align: center;
@@ -56,6 +62,9 @@ body{
     }
     .sidebar ul li i{
         font-size: 30px;
+    }
+    .main-content{
+        margin-left: 50px;
     }
 }
 @media (max-width: 575.98px){
@@ -75,6 +84,9 @@ body{
         width:100px;
 
     }
+    .main-content{
+        margin-left: 50px;
+    }
 }
 @media (min-width:768px){
     .sidebar{
@@ -91,6 +103,9 @@ body{
         font-size: 30px;
 
     }
+    .main-content{
+        margin-left: 100px;
+    }
 }
 @media (min-width: 992px){
     .sidebar{
@@ -101,6 +116,12 @@ body{
     }
     .sidebar ul li span:nth-child(2){
         display: inline;
+    }
+    .sidebar ul li i{
+        font-size: 20px;
+    }
+    .main-content{
+        margin-left: 200px;
     }
 }
 @media (min-width: 1200px){
@@ -115,5 +136,8 @@ body{
     }
     .sidebar ul li i{
         font-size: 20px;
+    }
+    .main-content{
+        margin-left: 200px;
     }
 }
