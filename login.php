@@ -1,3 +1,37 @@
+<?php
+//database connection
+
+require_once('connection.php');
+//setting
+if(isset($_POST['login']))
+{
+    //fetch form data
+    $username= $_POST['username'];
+    $password= $_POST['password'];4
+    $newPass= md5($password);
+
+
+    //perform the sql query
+    $sql = mysqli_query($conn,"SELECT * FROM account WHERE username='$username' and password='$newPass'");
+    $fetch= mysqli_fetch_array($sql);
+
+    if($fetch > 0 )
+    {
+        header('location: index.php');
+    }
+    else{
+        echo "error";
+        
+    }
+
+}
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

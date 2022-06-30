@@ -1,3 +1,9 @@
+<?php
+$msg='';
+require_once('processRegister.php')
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +26,7 @@
 
 <div class="main">
     <img src="zalego.jpg" alt="zalego"  class="rounded-circle">
+    <span><?php echo $msg  ?></span>
 </div>
 <div class="container">
     <div class="card">
@@ -43,7 +50,7 @@
         </div>
         <div class="row">
             <div class="col-lg-4 p-4">
-                <button class="btn btn-primary p-2">Submit</button>
+                <button class="btn btn-primary p-2" name="signUp">Submit</button>
             </div>
         </div>
         <p>Have an account? Sign in <a href="">here</a></p>
