@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 //database connection
 
 require_once('connection.php');
@@ -7,7 +9,7 @@ if(isset($_POST['login']))
 {
     //fetch form data
     $username= $_POST['username'];
-    $password= $_POST['password'];4
+    $password= $_POST['password'];
     $newPass= md5($password);
 
 
@@ -17,6 +19,7 @@ if(isset($_POST['login']))
 
     if($fetch > 0 )
     {
+        $_SESSION['login']= $username;
         header('location: index.php');
     }
     else{

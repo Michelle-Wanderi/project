@@ -1,3 +1,9 @@
+<?php
+session_start();
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +22,7 @@
 
 	<div class="header">
 <img src="zalego.jpg" alt="zalego" height="50" width="50" class="rounded-circle">
+
 <a href="#" class="navbar-trigger"><span></span></a>
 	</div>
 	<div class="sidebar">
@@ -52,6 +59,7 @@
 						</div>
 					</div>
 				</div>
+				
 				<div class="row">
 					<div class="col-lg-3">
 						<div class="card-header bg-dark text-white text-center">
