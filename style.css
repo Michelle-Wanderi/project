@@ -21,7 +21,7 @@ body{
 .sidebar{
     position: absolute;
     width: 100%;
-    background-color: #ff0000;
+    background-color: #7fc242;
     height: 100vh;
     z-index: 4;
     padding-top: 50px;

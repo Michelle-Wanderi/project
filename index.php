@@ -21,15 +21,24 @@ session_start();
 	<!-- All our code. write here   -->
 
 	<div class="header">
-<img src="zalego.jpg" alt="zalego" height="50" width="50" class="rounded-circle">
+	<img src="zalego.jpg" alt="zalego" height="50" width="50" class="rounded-circle">
+	<span><?php echo $_SESSION['login'] ?></span>
+	<a href="#" class="navbar-trigger"><span></span></a>
 
-<a href="#" class="navbar-trigger"><span></span></a>
+	<!-- logout starts here  -->
+	<span class="pull-right" style="padding:10px 30px; text-decoration:none">
+	<a href="#"><i class="fa fa-sign-out fa-2x"></i></a>
+	</span>
+	<!-- logout ends here -->
+
+	
+
 	</div>
 	<div class="sidebar">
 		<nav>
 			<ul>
 				<li>
-					<a href="">
+					<a href="students.php">
 						<span> <i class="fa fa-group"></i></span>
 						<span>Students</span>
 					</a>
@@ -59,7 +68,7 @@ session_start();
 						</div>
 					</div>
 				</div>
-				
+				<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-3">
 						<div class="card-header bg-dark text-white text-center">
@@ -107,7 +116,7 @@ session_start();
 						</div>
 					</div>
 				</div>
-
+				</div>
 	</div>
 	
 <script src="jquery.min.js"></script>
