@@ -36,7 +36,8 @@ elseif($password != $cpass)
 //submit data to database table
 else{
     //insert query
-    $sql = mysqli_query($conn, "INSERT INTO account(username,email,password)VALUES('$username','$email','$passHash')");
+    $sql = mysqli_query($conn, "INSERT INTO account(username,email,password)
+    VALUES('$username','$email','$passHash')");
     
     if($sql)
     {

@@ -28,13 +28,7 @@ if(isset($_POST['login']))
     }
 
 }
-
-
-
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,7 +44,7 @@ if(isset($_POST['login']))
  <body>
      
      <div class="header">
-         Zalego Admin Register
+         Zalego Admin| Register
      </div>
      <br>
      <br>

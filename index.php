@@ -118,8 +118,7 @@ session_start();
 				</div>
 				</div>
 	</div>
-	
-<script src="jquery.min.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
+	<?php require_once('includes/scripts.php')?>
+	<!-- slide 202	 -->	
 </body>
 </html>

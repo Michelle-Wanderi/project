@@ -26,7 +26,7 @@ require_once('processRegister.php')
 
 <div class="main">
     <img src="zalego.jpg" alt="zalego"  class="rounded-circle">
-    <span><?php echo $msg  ?></span>
+    <span><?php echo $msg ?></span>
 </div>
 <div class="container">
     <div class="card">

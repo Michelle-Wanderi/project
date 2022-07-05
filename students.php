@@ -1,27 +1,22 @@
+<?php
+require_once('logics/dbconnection.php');
+
+$sqlQuery= mysqli_query($conn,"SELECT * FROM enrollment");
+?>
+
 
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Bootstrap Admin Template</title>
-	<meta charset="UTF-8">
-	<meta name="description" content="Creating admin dashboard">
-	<meta name="keywords" content="HTML,CSS,Zalego,Technology,Zalego institute,JavaScript">
-	<meta name="author" content="Your name">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="style.css">
-</head>
+    <?php require_once('includes/header.php')?>
 <body>
 	<!-- All our code. write here   -->
 
 	<div class="header">
 	<img src="zalego.jpg" alt="zalego" height="50" width="50" class="rounded-circle">
-	
-	<a href="#" class="navbar-trigger"><span></span></a>
-
+	<a href="index.php" class="navbar-trigger"><span></span></a>
 	</div>
 	<div class="sidebar">
+        <?php require_once('includes/sidebar.php')?>
 		<nav>
 			<ul>
 				<li>
@@ -67,28 +62,23 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php while($fetchRecords=mysqli_fetch_array($sqlQuery)) { ?>
                                 <tr>
-                                    <td>1.</td>
-                                    <td>Michelle Wanderi</td>
-                                    <td>0774699072</td>
-                                    <td>michellewangari12@gmail.com</td>
-                                    <td>Female</td>
-                                    <td>Web design</td>
-                                    <td>23rd August 2022</td>
+                                    <td><?php echo $fetchRecords['no']?></td>
+                                    <td><?php echo $fetchRecords['fullname']?></td>
+                                    <td><?php echo $fetchRecords['phonenumber']?></td>
+                                    <td><?php echo $fetchRecords['email']?></td>
+                                    <td><?php echo $fetchRecords['gender']?></td>
+                                    <td><?php echo $fetchRecords['course']?></td>
+                                    <td><?php echo $fetchRecords['created_at']?></td>
                                     <td>
-                                        <a href="#" class="btn btn-primary btn-sm">
-                                            <i class="fa fa-edit"></i>
-                                            </a>
-                                        <a href="#" class="btn btn-info btn-sm">
-                                        <i class="fa fa-eye"></i>
-                                        </a>
-                                        <a href="#" class="btn btn-danger btn-sm">
-                                        <i class="fa fa-trash"></i>
-                                        </a>
-
+                                        <a href="">Edit</a>
+                                        <a href="">View</a>
+                                        <a href="">Delete</a>
                                     </td>
 
                                 </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
