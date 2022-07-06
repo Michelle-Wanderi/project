@@ -15,13 +15,4 @@ else
     echo "Connection failed";
 }
 
-
-
-
-
-
-
-
-
-
 ?>

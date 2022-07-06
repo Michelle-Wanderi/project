@@ -22,7 +22,7 @@ session_start();
 
 	<div class="header">
 	<img src="zalego.jpg" alt="zalego" height="50" width="50" class="rounded-circle">
-	<span><?php echo $_SESSION['login'] ?></span>
+	
 	<a href="#" class="navbar-trigger"><span></span></a>
 
 	<!-- logout starts here  -->
@@ -35,28 +35,7 @@ session_start();
 
 	</div>
 	<div class="sidebar">
-		<nav>
-			<ul>
-				<li>
-					<a href="students.php">
-						<span> <i class="fa fa-group"></i></span>
-						<span>Students</span>
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<span> <i class="fa fa-folder-open"></i></span>
-						<span>Courses</span>
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<span> <i class="fa fa-graduation-cap"></i></span>
-						<span>Campus</span>
-					</a>
-				</li>
-			</ul>
-		</nav>
+		<?php require_once('includes/sidebar.php')?>
 	</div>
 	<div class="main-content">
 				<div class="container-fluid">
@@ -119,6 +98,5 @@ session_start();
 				</div>
 	</div>
 	<?php require_once('includes/scripts.php')?>
-	<!-- slide 202	 -->	
 </body>
 </html>

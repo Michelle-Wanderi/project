@@ -11,34 +11,9 @@ $sqlQuery= mysqli_query($conn,"SELECT * FROM enrollment");
 <body>
 	<!-- All our code. write here   -->
 
-	<div class="header">
-	<img src="zalego.jpg" alt="zalego" height="50" width="50" class="rounded-circle">
-	<a href="index.php" class="navbar-trigger"><span></span></a>
-	</div>
+  <?php  require_once('includes/navbar.php')?>
 	<div class="sidebar">
         <?php require_once('includes/sidebar.php')?>
-		<nav>
-			<ul>
-				<li>
-					<a href="students.php">
-						<span> <i class="fa fa-group"></i></span>
-						<span>Students</span>
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<span> <i class="fa fa-folder-open"></i></span>
-						<span>Courses</span>
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<span> <i class="fa fa-graduation-cap"></i></span>
-						<span>Campus</span>
-					</a>
-				</li>
-			</ul>
-		</nav>
 	</div>
 	<div class="main-content">
         <div class="container-fluid">
@@ -72,9 +47,9 @@ $sqlQuery= mysqli_query($conn,"SELECT * FROM enrollment");
                                     <td><?php echo $fetchRecords['course']?></td>
                                     <td><?php echo $fetchRecords['created_at']?></td>
                                     <td>
-                                        <a href="">Edit</a>
-                                        <a href="">View</a>
-                                        <a href="">Delete</a>
+                                        <a href="edit-enrollment.php?id=<?php echo $fetchRecords['no'] ?>" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                        <a href="" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
+                                        <a href="" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                                     </td>
 
                                 </tr>

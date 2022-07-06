@@ -59,7 +59,7 @@ require_once('processRegister.php')
 
 
 
-<script src="bootstrap/js/bootstrap.bundle.js"></script>
+<script src="jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
