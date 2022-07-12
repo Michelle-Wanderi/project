@@ -1,4 +1,5 @@
 <?php
+$message ="";
 require_once('logics/dbconnection.php');
 
 $queryUser = mysqli_query($conn, "SELECT * FROM enrollment WHERE no='".$_GET['id']."' ");
@@ -13,6 +14,31 @@ while($fetchUser = mysqli_fetch_array($queryUser))
     $gender = $fetchUser['gender'];
 
 }
+//update user records
+if( isset($_POST['updateRecords']))
+{
+    //fetch form  data
+    $formName = $_POST['fullname'];
+    $formNumber = $_POST['phonenumber'];
+    $emailAddress = $_POST['email'];
+    $formGender = $_POST['gender'];
+    $formCourse = $_POST['course'];
+
+//update user records
+$updateQuery = mysqli_query($conn,
+"UPDATE enrollment SET fullname = '$name', phonenumber='$phoneNumber', email='$emailAddress', gender='$formGender', course='$formCourse',
+WHERE no='".$GET['id']."' ");
+
+if($updateQuery)
+{
+    $message= "Data updated";
+}
+else{
+    $message= "Records not updated"; 
+}
+
+}
+
 
 ?>
 
@@ -59,11 +85,13 @@ while($fetchUser = mysqli_fetch_array($queryUser))
                             <div class="card">
 							<div class="card-header bg-dark text-white text-center">
                                 <h4>Edit Student: <?php echo $fullName ?></h4> 
+                                <span><?php echo $message ?></span>
 							</div>
 	<div class="card-body">
 	<div class="container">
     <div class="row">
-            <form action="enroll.php" method="POST">
+       
+            <form action="edit-enrollment.php?id=<?php echo $id ?>" method="POST">
                 <div class="row">
                     <div class="col-lg-12">
                         <label for="Full Name" class="form-label">Full Name:</label>
@@ -82,9 +110,9 @@ while($fetchUser = mysqli_fetch_array($queryUser))
                     <div class="col-lg-12">
                         <label for="gender"  class="form-label">What's your gender?</label>
                         <select name="gender" class="form-control">
-                            <option>--Select your gender-- </option>
-                            <option value="female">Female</option>
-                            <option value="male">Male</option>
+                            <option value="<?php echo $gender ?> "><?php echo $gender ?> </option>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
                         </select>
                     </div>
                 </div>
@@ -92,41 +120,24 @@ while($fetchUser = mysqli_fetch_array($queryUser))
                 <div class="row">
                     <div class="col-lg-12">
                         <label for="course"  class="form-label">What's your preferred course?</label>
-                        <select class="form-control" name="course" value="<?php echo $course ?>" >
-                            <option>--Select your course-- </option>
-                            <option value="web design">Web design</option>
-                            <option value="cybersecurity">Cybersecurity</option>
-                            <option value="data science">Data science</option>
-                            <option value="software development">Software development</option>
+                        <select class="form-control" name="course" >
+                            <option value="<?php echo $course ?> "><?php echo $course ?> </option>
+                            <option value="Web design">Web design</option>
+                            <option value="Cybersecurity">Cybersecurity</option>
+                            <option value="Data science">Data science</option>
+                            <option value="Software development">Software development</option>
                         </select>
                     </div>
                 </div>
                 <br>
-				<button class="btn btn-primary btn-sm">Update records</button>
-        
-            <!-- <form action="enroll.php" method="POST">
-                <div class="row">
-                    <div class="mb-3 col-lg-6 col-md-6">
-                        <input type="email" class="form-control" name="email" placeholder="Your email address">
-                    </div>
-                    <div class="mb-3 col-lg-6 col-md-6">
-                        <button class="btn btn-primary" name="enrollButton">Subscribe</button>
-                    </div>
-                </div>
-            </form> -->
-        </div>
-    </div>
-    <hr>
-<p style="font-size: 7px;">@ Company 2022</p>
-
-
-							
-							</div>
+				<button class="btn btn-primary btn-sm" type="submit" name="updateRecords">Update records</button>
+                </form>	
+            </div>
 						</div>
 					</div>
                     </div>
 				</div>
-
+       
 
 
         <?php require_once('includes/scripts.php')?>
