@@ -2,6 +2,7 @@
 //database connection
 require_once('logics/dbconnection.php');
 
+
 $sqlFetchStudent = mysqli_query($conn, "SELECT * FROM enrollment WHERE no='".$_GET['id']."' ");
 while($fetchStudentRecords = mysqli_fetch_array($sqlFetchStudent))
 {

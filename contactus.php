@@ -43,23 +43,32 @@ $sqlQuery= mysqli_query($conn,"SELECT * FROM contactus");
                         <table class="table table-striped table-hover table-responsive" style="font-style: 12px;">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>First Name</th>
                                     <th>Last Name</th>
                                     <th>Phone Number</th>
                                     <th>Email</th>
                                     <th>Message</th>
+                                    <th>Actions</th>
+                        
                                    
                                 </tr>
                             </thead>
                             <tbody>
                             <?php while($fetchStudentRecords=mysqli_fetch_array($sqlQuery)) { ?>
                                 <tr>
+                                    <td><?php echo $fetchStudentRecords['no']?></td>
                                     <td><?php echo $fetchStudentRecords['firstname']?></td>
                                     <td><?php echo $fetchStudentRecords['lastname']?></td>
                                     <td><?php echo $fetchStudentRecords['phonenumber']?></td>
                                     <td><?php echo $fetchStudentRecords['email']?></td>
                                     <td><?php echo $fetchStudentRecords['message']?></td>
-                                    
+                                    <td>
+                                        <a href="edit-contactus.php?id=<?php echo $fetchStudentRecords['firstname'] ?>" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                        <a href="view-contactus.php?id=<?php echo $fetchStudentRecords['firstname'] ?>" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
+                                        <a href="delete-contactus.php?id=<?php echo $fetchStudentRecords['firstname'] ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                    </td>
+
                                     <tr>
                                     <?php } ?>
                             </tbody>
