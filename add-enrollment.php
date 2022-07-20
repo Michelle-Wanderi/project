@@ -41,6 +41,15 @@ else{
     <link rel="stylesheet" href="font-awesome/fonts/fontawesome-webfont.svg">
 </head>
 <body>
+    <!-- All our code. write here   -->
+
+	<div class="header">
+	<img src="zalego.jpg" alt="zalego" height="50" width="50" class="rounded-circle">
+	<a href="#" class="navbar-trigger"><span></span></a>
+	</div>
+	<div class="sidebar">
+        <?php require_once('includes/sidebar.php')?>
+	</div>
     <nav  class="navbar navbar-expand-lg bg-light fixed-top ">
         <div class="container-fluid">
             <a href="#" class="navbar-brand">Zalego Academy</a>
